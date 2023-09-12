@@ -11,19 +11,24 @@
 // Execute `rustlings hint hashmaps1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
 fn fruit_basket() -> HashMap<String, u32> {
-    let mut basket = // TODO: declare your hash map here.
+    let mut basket = HashMap::new(); // TODO: declare your hash map here.
 
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
 
     // TODO: Put more fruits in your basket here.
+    basket.insert(String::from("apple"), 3);
 
-    basket
+    basket.insert(String::from("strawberry"), 10);
+
+    basket.insert(String::from("blackberry"), 2);
+    basket.insert(String::from("cherry"), 11);
+    
+    return basket;
 }
 
 #[cfg(test)]
@@ -33,6 +38,7 @@ mod tests {
     #[test]
     fn at_least_three_types_of_fruits() {
         let basket = fruit_basket();
+        println!("{}", basket.len());
         assert!(basket.len() >= 3);
     }
 
